@@ -18,8 +18,9 @@ class Review < ActiveRecord::Base
     filtered_reviews = self.all.select do |review|
       review.podcast.name == podcast_name
     end
+
     filtered_reviews.each do |filtered_review|
-      puts "Review: #{filtered_review.content}"
+      puts "Review: #{filtered_review.content} - by #{filtered_review.listener.name}."
       #returns content of filtered podcasts
     end
   end
